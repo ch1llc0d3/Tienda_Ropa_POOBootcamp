@@ -1,12 +1,12 @@
 from carrito import Carrito
-from producto import Producto
+from producto import Camisa, Pantalon
 from tienda import Tienda
 
 def menu():
     tienda = Tienda("Tienda de Ropas")
     
     # Add productos a la tienda
-    tienda.add_producto(Camisa("Camisa Amarilla", 29.99, "S", "Lino", True))
+    tienda.add_producto(Camisa("Camisa Amarilla", 29.99, "S", "Lino", "Corta"))
     tienda.add_producto(Pantalon("Jeans Azul", 59.12, "M", "Denim", "champion"))    
     
     carrito = Carrito()
@@ -24,7 +24,7 @@ def menu():
         elif opcion == "2":
             tienda.ver_productos()
             try:
-                seleccion = input(input("Seleccione el numero del producto para add al carrito:"))
+                seleccion = int(input("Seleccione el número del producto para añadir al carrito: "))
                 producto = tienda.select_producto(seleccion)
                 carrito.add_producto(producto)
             except (ValueError, IndexError):

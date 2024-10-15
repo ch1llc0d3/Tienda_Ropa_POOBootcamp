@@ -10,7 +10,7 @@ class Producto:
     
     # Metodo para mosrar info del producto    
     def ver_info(self):
-        return f"Producto: {self._nombre} - Precio: ${self._precio:.2f}"
+        return f"{self._nombre} - Precio: ${self._precio}"
         pass
     
 # Clase Ropa hereda de Producto
@@ -22,7 +22,7 @@ class Ropa(Producto):
         
     # Metodo sobreescrito para mostrar la informacion especifica de ropa
     def ver_info(self):
-        return f"{self._nombre} - Tamanho: {self._tamanho}, Tela: {self._tela}, Precio: ${self._precio:.2f}"
+        return f"{self._nombre} - Tamanho: {self._tamanho}, Tela: {self._tela}, Precio: ${self._precio}"
     
 # Clases derivadas de ropa, como Camisa, Pantalon, Zapato
 
