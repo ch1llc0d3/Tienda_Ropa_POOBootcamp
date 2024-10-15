@@ -20,12 +20,25 @@ def menu():
         opcion = input("Selecciona una opcion:")
         
         if opcion == "1":
-            
+            tienda.ver_productos()
         elif opcion == "2":
-            
+            tienda.ver_productos()
+            try:
+                seleccion = input(input("Seleccione el numero del producto para add al carrito:"))
+                producto = tienda.select_producto(seleccion)
+                carrito.add_producto(producto)
+            except (ValueError, IndexError):
+                print("Opcion no valida")
         elif opcion == "3":
+            carrito.ver_carrito()
+        elif opcion == "4":
+            carrito.ver_carrito()
+            carrito.calcular_total()
+            print("Gracias por tu compra")
+            break
+        else:
+            print("Opcion no valida. Por favor, selecciona de nuevo")        
             
-        else opcion == "4":
-        
-        
+if __name__ == "__main__":
+    menu()
         
